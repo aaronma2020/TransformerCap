@@ -41,7 +41,7 @@ if not os.path.exists(log_path):
 epochs = config.epoch
 global_step = 0
 best_score = 0
-saves = [[0, 0, 0]] * config.topk
+saves = [[0, 0, '0']] * config.topk
 writer = SummaryWriter(log_path)
 with open(config.vocab, 'rb') as f:
     vocab = pickle.load(f)
