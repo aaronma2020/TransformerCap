@@ -45,6 +45,14 @@
 
 ---
 
+#### Result
+
+| method             | Bleu4 | METEOR | ROUGE | CIDEr | SPICE |
+| ------------------ | ----- | ------ | ----- | ----- | ----- |
+| Transformer(beam3) | 34.6  | 28.4   | 56.5  | 114.7 | 21.6  |
+
+
+
 #### Acknowledgenments
 
 Thanks to a captioning base code repository [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch) and a lot of codes refer to it.  
