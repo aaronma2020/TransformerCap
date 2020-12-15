@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--seed', default=123)
 parser.add_argument('--id', required=True, default='baseline')
 parser.add_argument('--epoch', default=20)
-
+parser.add_argument('--eval', type=str, default='all', help='best or all')
 
 # load data direction
 parser.add_argument('--vocab', default='./data/vocab.pkl')
@@ -21,7 +21,6 @@ parser.add_argument('--test_bs', default=100)
 parser.add_argument('--num_workers', default=4)
 
 # process caption
-parser.add_argument('--vocab_size', default=9490)
 parser.add_argument('--fixed_len', default=16)
 
 # save parameters
