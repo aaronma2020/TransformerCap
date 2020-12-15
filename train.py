@@ -40,12 +40,11 @@ if not os.path.exists(log_path):
 # gobal information
 epochs = config.epoch
 global_step = 0
-best_score = 0
 saves = [[0, 0, '0']] * config.topk
 writer = SummaryWriter(log_path)
 with open(config.vocab, 'rb') as f:
     vocab = pickle.load(f)
-
+config.vocab_size = vocab.get_size()
 # load data
 train_loader = data_load(config, 'train')
 val_loader = data_load(config, 'val')
@@ -127,6 +126,6 @@ for epoch in range(epochs):
                 sup_score = scores[config.sup_score]
 
                 # save the best model on supervised score
-                best_score = save_model(sup_score, global_step, model, saves, log_path)
+                saves = save_model(sup_score, global_step, model, saves, log_path)
 
             model.train()
